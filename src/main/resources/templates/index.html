@@ -1,17 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Portfolio</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/profile.css">
 </head>
 <body>
 <div class="container">
-    <div class="well">
+    <header>
+        <h2>Portfolio</h2>
+    </header>
 
-    </div>
+    <section>
+        <nav>
+            <h3>Tweets</h3>
+            <table>
+                <th>Timeline</th>
+                <tr th:each="t: ${tweets}">
+                    <td th:text="${t.name}">-</td>
+                    <td th:text="${t.description}">-</td>
+                </tr>
+            </table>
+        </nav>
+
+        <article>
+            <h1>London</h1>
+            <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+            <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>Footer</p>
+    </footer>
 </div>
 </body>
 </html>
