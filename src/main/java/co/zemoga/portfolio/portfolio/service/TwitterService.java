@@ -1,12 +1,12 @@
 package co.zemoga.portfolio.portfolio.service;
 
-import co.zemoga.portfolio.portfolio.vo.TweetDetail;
+import co.zemoga.portfolio.portfolio.vo.TwittDetail;
 import twitter4j.Status;
 
 import java.util.List;
 
-public interface TweeterService {
+public interface TwitterService {
 
     List<Status> getStatus();
-    List<TweetDetail> getDetails();
+    List<TwittDetail> getDetails();
 }
