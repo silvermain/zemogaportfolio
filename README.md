@@ -26,7 +26,7 @@ Clone repo: https://github.com/silvermain/zemogaportfolio.git
 $ mvn clean install
 $ mnv spring-boot:run
 
-Go to http://localhost:8080, be aware of Twiteer's API consumption rate an limit
+Go to http://localhost:8080, be aware of Twiteer's API consumption rate and limits
 
 #Step by step setup of local
 1. $ git clone https://github.com/silvermain/zemogaportfolio.git
@@ -50,3 +50,9 @@ On a container, Maven, Spring Boot and DB dependencies must be satisfied before 
 
 #Author
 -Ivan A. David <ivan.david@gmail.com>
+
+#Total time for development
+-Setting up UI with Thymelef and CSS: 1 hour
+-Twitter section with JUnit and Mocks: 5 hours
+-Database access (after delay verifying access from Zemoga): 3 hours
+TOTAL TIME: 9 hours
