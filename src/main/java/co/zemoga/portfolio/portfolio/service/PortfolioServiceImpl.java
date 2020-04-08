@@ -26,4 +26,9 @@ public class PortfolioServiceImpl implements PortfolioService {
     public Portfolio addRecord(Portfolio p) {
         return  portfolioRepository.save(p);
     }
+
+    @Override
+    public Portfolio getFirst() {
+        return portfolioRepository.getOne(0);
+    }
 }

@@ -8,4 +8,5 @@ public interface PortfolioService {
 
     public List<Portfolio> getRecords();
     public Portfolio addRecord(Portfolio p);
+    public Portfolio getFirst();
 }
