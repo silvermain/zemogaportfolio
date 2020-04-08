@@ -43,6 +43,7 @@ Go to http://localhost:8080/swagger-ui.html
 
 #Deployment
 At this point manual using Git push
+On a container, Maven, Spring Boot and DB dependencies must be satisfied before running target/portfolio-0.0.1-SNAPSHOT.jar
 
 #Versioning
 0.0.1-SNAPSHOT
