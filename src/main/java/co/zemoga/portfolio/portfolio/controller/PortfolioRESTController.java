@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * REST controller with two endpoints, restricted to list and first record, docummented out with Swagger
+ */
+
 @RestController
 @RequestMapping(value = "/api/v1")
 public class PortfolioRESTController {

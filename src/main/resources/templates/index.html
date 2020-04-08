@@ -20,14 +20,16 @@
         <nav>
             <h3>Tweets</h3>
             <table>
+                <!-- Render of the first five tweets-->
                 <th>Timeline</th>
-                <!--tr th:each="t: ${tweets}">
+                <tr th:each="t: ${tweets}">
                     <td th:text="${t.name}">-</td>
                     <td th:text="${t.description}">-</td>
-                </tr-->
+                </tr>
             </table>
         </nav>
 
+        <!--Populates the article with the first record coming in from database-->
         <article>
             <h1 th:text="${portfolio.getTwitterUserName()}"></h1>
             <p th:text="${portfolio.getDescription()}"></p>

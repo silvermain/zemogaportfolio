@@ -33,6 +33,7 @@ article {
     width: 70%;
     background-color: #f1f1f1;
     height: 700px;
+    justify-content: center;
 }
 
 section:after {

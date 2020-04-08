@@ -7,6 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
+/**
+    Portfolio model mapping daatabase table using annotations, including Lombok to make shorter code
+ */
 @Entity
 @Table
 @Data
