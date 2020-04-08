@@ -25,8 +25,8 @@ public class TwitterServiceImplTest {
         when(connectionService.getConnection()).thenReturn(twitter);
 
         ResponseListMock<Status> responseListMock = new ResponseListMock<>();
-        responseListMock.add(new StatusMockImpl(5L));
-        responseListMock.add(new StatusMockImpl(10L));
+        responseListMock.add(new StatusMockImpl(5L, "CNN", "COVID-19"));
+        responseListMock.add(new StatusMockImpl(10L, "USA TODAY", "More COVID-19"));
 
         when(twitter.getHomeTimeline()).thenReturn(responseListMock);
 
@@ -40,7 +40,16 @@ public class TwitterServiceImplTest {
         Assert.assertEquals(10L, twitterService.getStatus().get(1).getId());
     }
 
+    @Test
+    public void testDetails(){
+        Assert.assertEquals(2, twitterService.getDetails().size());
+        Assert.assertEquals("CNN", twitterService.getDetails().get(0).getName());
+        Assert.assertEquals("COVID-19", twitterService.getDetails().get(0).getDescription());
 
+        Assert.assertEquals("USA TODAY", twitterService.getDetails().get(0).getName());
+        Assert.assertEquals("More COVID-19", twitterService.getDetails().get(0).getDescription());
+
+    }
 
 
 }

@@ -9,7 +9,7 @@ import twitter4j.TwitterException;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
+import java.util.stream.Collectors;
 
 @Service
 public class TwitterServiceImpl implements TwitterService {
@@ -40,19 +40,10 @@ public class TwitterServiceImpl implements TwitterService {
 
     @Override
     public List<TwittDetail> getDetails() {
-        List<TwittDetail> details = new ArrayList<>();
-        int countTweet = 0;
-        if (getStatus().size() > 0) {
-            ListIterator<Status> statusListIterator = getStatus().listIterator();
-            while (statusListIterator.hasNext()) {
-                Status s = statusListIterator.next();
-                if (countTweet < TWEET_LIMIT) {
-                    details.add(new TwittDetail(s.getUser().getName(), s.getUser().getDescription()));
-                }
-                countTweet++;
-            }
-        }
-        return details;
+        return getStatus().stream()
+                .limit(TWEET_LIMIT)
+                .map(status -> new TwittDetail(status.getUser().getName(), status.getUser().getDescription()))
+                .collect(Collectors.toList());
     }
 
 }

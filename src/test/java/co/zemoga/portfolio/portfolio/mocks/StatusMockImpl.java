@@ -1,25 +1,22 @@
 package co.zemoga.portfolio.portfolio.mocks;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import twitter4j.*;
 
 import java.util.Date;
 
+@AllArgsConstructor
+@Getter
 public class StatusMockImpl implements Status {
 
     private long id;
-
-    public StatusMockImpl(long id) {
-        this.id = id;
-    }
+    private String name;
+    private String description;
 
     @Override
     public Date getCreatedAt() {
         return null;
-    }
-
-    @Override
-    public long getId() {
-        return id;
     }
 
     @Override
@@ -89,7 +86,7 @@ public class StatusMockImpl implements Status {
 
     @Override
     public User getUser() {
-        return null;
+        return new UserMockImpl(this.name, this.description);
     }
 
     @Override
