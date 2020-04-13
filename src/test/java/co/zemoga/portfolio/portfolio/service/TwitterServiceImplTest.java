@@ -46,8 +46,8 @@ public class TwitterServiceImplTest {
         Assert.assertEquals("CNN", twitterService.getDetails().get(0).getName());
         Assert.assertEquals("COVID-19", twitterService.getDetails().get(0).getDescription());
 
-        Assert.assertEquals("USA TODAY", twitterService.getDetails().get(0).getName());
-        Assert.assertEquals("More COVID-19", twitterService.getDetails().get(0).getDescription());
+        Assert.assertEquals("USA TODAY", twitterService.getDetails().get(1).getName());
+        Assert.assertEquals("More COVID-19", twitterService.getDetails().get(1).getDescription());
 
     }
 
