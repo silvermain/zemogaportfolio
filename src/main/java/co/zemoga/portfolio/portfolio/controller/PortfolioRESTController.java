@@ -5,11 +5,13 @@ import co.zemoga.portfolio.portfolio.model.Portfolio;
 import co.zemoga.portfolio.portfolio.service.PortfolioService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -37,7 +39,7 @@ public class PortfolioRESTController {
     @ApiOperation(value = "Retrieve first portfolio from database", notes = "This endpoint retrieves the first portfolio within a JSON message", produces = "JSON")
     @RequestMapping(value = "/portfolio/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Portfolio getPortfolio(@PathVariable Integer id){
-        return portfolioService.getRecords().get(id);
+        return portfolioService.getById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "ID not found"));
     }
 
 

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PortfolioServiceImpl implements PortfolioService {
@@ -23,12 +24,11 @@ public class PortfolioServiceImpl implements PortfolioService {
     }
 
     @Override
-    public Portfolio addRecord(Portfolio p) {
-        return  portfolioRepository.save(p);
+    public Optional<Portfolio> getById(int id) {
+        if ( portfolioRepository.existsById(id)) {
+            return Optional.of(portfolioRepository.getOne(id));
+        }
+        return Optional.empty();
     }
 
-    @Override
-    public Portfolio getFirst() {
-        return portfolioRepository.getOne(0);
-    }
 }

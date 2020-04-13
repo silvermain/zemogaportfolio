@@ -3,10 +3,10 @@ package co.zemoga.portfolio.portfolio.service;
 import co.zemoga.portfolio.portfolio.model.Portfolio;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface PortfolioService {
 
-    public List<Portfolio> getRecords();
-    public Portfolio addRecord(Portfolio p);
-    public Portfolio getFirst();
+    List<Portfolio> getRecords();
+    Optional<Portfolio> getById(int id);
 }

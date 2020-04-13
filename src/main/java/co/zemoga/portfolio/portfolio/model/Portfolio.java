@@ -1,5 +1,6 @@
 package co.zemoga.portfolio.portfolio.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -14,6 +15,7 @@ import javax.persistence.Table;
 @Entity
 @Table
 @Data
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Portfolio {
 
     @Id
